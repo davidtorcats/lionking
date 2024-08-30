@@ -1,0 +1,384 @@
+    /* pseudoelemento customProperty */
+    :root {
+        --blanco: #ffffff;
+        /*color para la fuente,  contenido y borde*/
+        --negro: #000000;
+        /*color para el cuerpo*/
+        --gris: #222222;
+        /*color para el borde*/
+        --gris-claro: #cccccc;
+        /*color para el borde*/
+        --naranjo: #d17014;
+        /*color para la caja caracteristicas, borde del círculo, imagen cuadrada y boton */
+        --negro-transparente: rgba(255, 255, 255, 0);
+        /*color fondo semitransparente para el texto */
+        --cafe-claro: #9a6605;
+        /* color para el boton hover */
+        --cafe-oscuro: #332201;
+        /*color para el pie de página */
+    }
+
+    /* Estilos generales para el body */
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    body {
+        background-color: var(--negro);
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        background: var(--negro);
+    }
+
+    header img {
+        width: 300px;
+        border: 2px solid var(--blanco);
+        margin: 20px auto;
+    }
+
+    h1 {
+        color: var(--blanco);
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .contenedorParrafos {
+        padding: 20px;
+        background: var(--blanco);
+        margin-inline: 20px;
+    }
+
+    .contenedorParrafos h2 {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .twolions {
+        display: none;
+    }
+
+    .container-img-lions {
+        background: var(--negro);
+    }
+
+    .container-img {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 30px;
+    }
+
+    .img-lion {
+        border-radius: 50%;
+        border: 2px orange solid;
+        object-fit: cover;
+        width: 120px;
+        height: 120px;
+    }
+
+    .img-lion:nth-last-child(3) {
+        display: none;
+    }
+
+    .section-caracteristica {
+        display: none;
+    }
+
+    .section-melena {
+        padding: 20px;
+        background: var(--blanco);
+
+    }
+
+    .section-melena h2 {
+        font-weight: bold;
+    }
+
+    .img-melena {
+        display: none;
+    }
+
+    .section-leon-roca {
+        background-image: url('../img/leon_roca.jpg');
+        background-repeat: no-repeat;
+        height: 250px;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .section-roca {
+        background: var(--negro);
+        height: 290px;
+
+    }
+
+    .title-button {
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 30px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .title-button h2 {
+        font-size: 12px;
+        color: var(--blanco);
+    }
+
+    .formulario-contacto {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        border-radius: 12px;
+        background: var(--blanco);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .formulario-contacto h2 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    form input[type="email"] {
+        padding: 5px;
+        border: var(--gris-claro) 1px solid;
+    }
+
+    form button {
+        padding: 8px;
+        color: var(--blanco);
+        background: var(--naranjo);
+        border: transparent;
+        border-radius: 4px;
+
+    }
+
+    footer {
+        margin-top: 30px;
+        color: var(--blanco);
+        text-align: center;
+        background: var(--cafe-oscuro);
+        padding: 30px 10px;
+    }
+
+    @media (min-width: 481px) and (max-width: 1023px) {
+        .img-lion:nth-last-child(3) {
+            display: block;
+        }
+
+        .img-lion {
+            width: 150px;
+            height: 150px;
+        }
+
+        .section-roca {
+            height: 400px;
+        }
+
+        .section-leon-roca {
+            height: 350px;
+        }
+
+        .title-button h2 {
+            font-size: 26px;
+        }
+
+        .container-img {
+            padding: 60px;
+        }
+
+        header img {
+            width: 86%;
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+        header img {
+            width: 86%;
+            animation: entrada 6s backwards;
+        }
+
+        @keyframes entrada {
+            from {
+                opacity: 0;
+                background: red;
+            }
+
+            to {
+                opacity: 1;
+                background: black
+            }
+        }
+
+
+        .img-lion:nth-last-child(3) {
+            display: block;
+        }
+
+        .img-lion {
+            margin-inline: 15px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .container-img {
+            justify-content: center;
+            margin-block: 30px;
+        }
+
+        .section-information {
+            width: 45%;
+            background: var(--blanco);
+            padding: 30px 20px;
+            animation: desdeabajo 4s backwards;
+        }
+
+        @keyframes desdeabajo {
+            from {
+                translate: 0 20vh;
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+
+
+        .section-information h2 {
+            font-weight: bold;
+        }
+
+        .contenedorParrafos {
+            background: var(--negro);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .twolions {
+            display: flex;
+            justify-content: center;
+            background: var(--gris);
+            padding: 5% 0;
+            align-items: center;
+            width: 50%;
+            border: 1px solid var(--gris-claro);
+            animation: desdearriba 4s backwards;
+        }
+
+        .twolions img {
+            width: 80%;
+            height: 80%;
+            border: solid 4px var(--naranjo);
+        }
+
+        @keyframes desdearriba {
+            from {
+                translate: 0 -20vh;
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+
+        .section-caracteristica {
+            display: block;
+            background-color: var(--blanco);
+            padding: 20px;
+            width: 50%;
+        }
+
+        .section-melena {
+            width: 50%;
+            border-left: solid 4px var(--gris-claro);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-melena {
+            display: block;
+            width: 70%;
+            border: 3px solid var(--naranjo);
+            margin: 5% auto;
+            object-fit: cover;
+        }
+
+        .segunda-seccion-informacion {
+            display: flex;
+            width: 100%;
+        }
+
+        .caracteristica {
+            border: 1px solid var(--gris-claro);
+            margin-top: 10px;
+        }
+
+        .caracteristica h3 {
+            background: var(--naranjo);
+            padding: 15px 10px;
+            color: var(--blanco);
+        }
+
+        .caracteristica p {
+            padding: 15px;
+        }
+
+        .section-roca {
+            height: 500px;
+        }
+
+        .section-leon-roca {
+            height: 90%;
+        }
+
+        .title-button h2 {
+            font-size: 44px;
+            font-weight: normal;
+            padding-inline: 10px;
+        }
+
+        .formulario-contacto {
+            height: 160px;
+            padding-top: 20px;
+        }
+
+        .formulario-contacto p {
+            font-size: 17px;
+        }
+
+        form input[type="email"] {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        form button {
+            padding: 14px;
+            font-size: 18px;
+        }
+    }
